@@ -1,0 +1,1 @@
+# Telerik.Sitefinity.Samples.QuantumMobileApp
