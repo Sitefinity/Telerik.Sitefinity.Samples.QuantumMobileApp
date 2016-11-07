@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      xmlns:rad="shared/views" xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:IC="nativescript-web-image-cache"
+      navigatingTo="onNavigatingTo">
+    <rad:navBar></rad:navBar>
+  <drawer:RadSideDrawer id="mainMenuSideDrawer">
+    <drawer:RadSideDrawer.mainContent>
+        <StackLayout>
+        <Label text="{{itemsTitle}}" horizontalAlignment="center" class="qItemsTitle" />
+        <Label cssClass="qUnderLineItems" horizontalAlignment="center" />
+          <ListView items="{{ newsDataSource }}" itemTap="{{listViewItemTap}}" class="qListView">
+            <ListView.itemTemplate>
+              <GridLayout columns="*, 100" rows="*">
+                <StackLayout row="0" col="0">
+                  <Label text="{{ Title }}" textWrap="true" class="qTitleList" />
+                  <Label text="{{ PublicationDate | utcDateConverter('') }}" textWrap="true" class="qDateList" />
+                  <Label text="{{ Summary | summarySubstring('') }}" textWrap="true" class="qSummaryItem" />
+                </StackLayout>                
+                <IC:WebImage row="0" col="1"  id="imageId" src="{{ RelatedMedia ? RelatedMedia : '~/images/Blog.png'  }}" class="qListItemsImage">
+                </IC:WebImage>   
+              </GridLayout>
+            </ListView.itemTemplate>
+          </ListView>
+        </StackLayout>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent >
+      <rad:sideMenuContent></rad:sideMenuContent>
+    </drawer:RadSideDrawer.drawerContent>
+  </drawer:RadSideDrawer>
+</Page>

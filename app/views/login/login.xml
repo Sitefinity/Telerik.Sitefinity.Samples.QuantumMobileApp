@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+       xmlns:rad="shared/views" xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" navigatingTo="onNavigatingTo">
+  <rad:navBarWL></rad:navBarWL>
+  <drawer:RadSideDrawer id="mainMenuSideDrawer">
+    <drawer:RadSideDrawer.mainContent>
+        <StackLayout >
+          <Image src="~/images/Locker.png" stretch="none" horizontalAlignment="center"></Image>
+          <Label text="Login to Quantum" textWrap="true" class="qItemsTitle" horizontalAlignment="center" />
+          <TextField text="{{username}}" hint="username" class="qLoginInput" horizontalAlignment="center" ></TextField>
+          <TextField text="{{password}}" secure="true" class="qLoginPass" hint="password" horizontalAlignment="center"></TextField>
+          <Button text="LOGIN" tap="{{logIn}}" class="qLogInButton"  visibility="{{ showLogInButton ? 'visible' : 'collapsed' }}" horizontalAlignment="center"></Button>
+        </StackLayout>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent >
+      <rad:sideMenuContent></rad:sideMenuContent>
+    </drawer:RadSideDrawer.drawerContent>
+  </drawer:RadSideDrawer>
+</Page>

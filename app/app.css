@@ -1,0 +1,171 @@
+﻿/*#region ListView*/
+
+.qDateList {
+    font-size:8;
+    margin-left: 5;
+    margin-bottom: 5;
+}
+
+/*#endregion*/
+
+/*#region ActionBar*/
+
+.qLogo {
+    height:40;
+}
+
+.qActionBar {
+    background-color:white;    
+    border-width:1;
+    border-color:#00B4C9;
+}
+
+/*#endregion*/
+
+/*#region Drawer Content*/
+
+.qDrawerMenuContent {
+    background-image: url("~/images/Nav-BG.png");
+    background-repeat: repeat-y;
+
+    color:white;    
+}
+
+.qCategory {
+    font-size:20;
+    text-align:left;
+    margin-bottom:5;
+    margin-top:30;
+    text-transform: uppercase;
+}
+
+.qUnderLine {
+    background-color:white;
+    height:1;
+    width:208;
+    margin-left: 20;
+}
+
+.qCategoryLink {    
+    font-size:16;    
+    background-color:transparent;
+    text-align:left;
+    margin-top:3;
+    margin-bottom:3;
+}
+
+.qCategory,
+.qCategoryLink {
+    margin-left:20;
+}
+/*#endregion*/
+
+.qListItemsImage {
+    height:80;
+    width:100;
+    margin-right: 5;
+}
+
+
+/*#region Items List*/
+
+.qTitleList {
+    color: #00B4C9;
+    margin-left: 5;
+}
+
+.qItemsTitle {
+    color: #00B4C9;
+    font-size: 32;
+    margin-top: 20;
+    margin-bottom: 20;
+}
+
+.qSummaryItem {
+    margin-left: 5;
+    margin-right: 10;
+    margin-top: 5;
+    margin-bottom: 5;
+    font-size: 10;
+
+}
+
+.qUnderLineItems {
+    background-color:#00B4C9;
+    height:1;
+    width:228;
+    margin-bottom: 10;
+}
+
+/*#endregion*/
+
+/*#region LogIn*/
+
+.qLoginPass,
+.qLoginInput {
+    border-width:2;
+    border-color:#00B4C9;
+    border-radius: 4;
+    width:280;
+    text-align: left;
+    height: 38;
+    font-size:16;
+}
+
+.qLoginInput {
+    margin-top:20;
+    margin-bottom: 10;
+}
+
+.qLoginPass {
+    margin-bottom: 30;    
+}
+
+.qLogInButton {
+    width:280;
+    text-align: center;
+    color:white;
+    background-color: #00B4C9;
+    height: 42;
+    border-radius: 4;
+}
+
+
+/*#endregion*/
+
+/*#region Main Page*/
+
+.qImageCategory {
+    height: 200;
+    background-color: #00B4C9;
+    width: 100%;
+    text-align: center;
+    vertical-align:center;
+}
+
+/*#endregion*/
+
+/*#region Item */
+
+.qItemTitle {
+    font-size: 24;
+    color: #00B4C9;
+    margin-left: 5;
+    margin-top:10;
+}
+
+.qItemAuthor {
+    font-size: 12;
+    margin-left: 5;
+}
+
+.qItemHtmlView {
+    margin-left: 5;
+    margin-right: 5;
+}
+
+.qItemImage {
+    height: 180;
+}
+
+/*#endregion*/

@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:rad="shared/views" xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" navigatingTo="onNavigatingTo">
+  <rad:navBarWL></rad:navBarWL>
+  <drawer:RadSideDrawer id="mainMenuSideDrawer">
+    <drawer:RadSideDrawer.mainContent>
+      <StackLayout >
+      <Label text="White Papers" horizontalAlignment="center" class="qItemsTitle" />
+        <ListView items="{{ whitePapersDataSource }}" itemTap="{{listViewItemTap}}" class="qListView">
+          <ListView.itemTemplate>
+              <GridLayout columns="*, 40" rows="*">
+                <StackLayout row="0" col="0">
+                  <Label text="{{ Title }}" textWrap="true" class="qTitleList" />
+                  <Label text="{{ PublicationDate | utcDateConverter('') }}" textWrap="true" class="qDateList" />
+                </StackLayout>                
+                <Image row="0" col="1" src="~/images/Unlocked.png" class="qWhitePaperImage" />
+              </GridLayout>
+          </ListView.itemTemplate>
+        </ListView>
+      </StackLayout>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent >
+      <rad:sideMenuContent></rad:sideMenuContent>
+    </drawer:RadSideDrawer.drawerContent>
+  </drawer:RadSideDrawer>
+</Page>

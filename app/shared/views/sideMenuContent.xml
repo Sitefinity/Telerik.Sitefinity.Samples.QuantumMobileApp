@@ -1,0 +1,15 @@
+<ScrollView>
+  <StackLayout cssClass="qDrawerMenuContent">
+    <Label text="{{ isEngLang ? newsEN : newsES }}" cssClass="qCategory" tap="{{navigateToAllNews}}" />
+    <Label cssClass="qUnderLine" horizontalAlignment="left" />    
+    <Label text="{{ isEngLang ? designEN : designES }}" class="qCategoryLink" tap="{{navigateToDesignNews}}"></Label>
+    <Label text="{{ isEngLang ? marketingEN : marketingES }}" class="qCategoryLink" tap="{{navigateToMarketingNews}}"></Label>
+    <Label text="{{ isEngLang ? developmentEN : developmentES }}" class="qCategoryLink" tap="{{navigateToDevNews}}"></Label>
+    <Label text="{{ isEngLang ? blogsEN : blogsES }}" tap="{{navigateToAllBlogPosts}}" cssClass="qCategory" />
+    <Label cssClass="qUnderLine" horizontalAlignment="left" />
+    <Label text="{{ isEngLang ? designEN : designES }}" tap="{{navigateToDesignBlogPosts}}" class="qCategoryLink"></Label>
+    <Label text="{{ isEngLang ? marketingEN : marketingES }}" tap="{{navigateToMarketingBlogPosts}}" class="qCategoryLink"></Label>
+    <Label text="{{ isEngLang ? developmentEN : developmentES }}" tap="{{navigateToDevBlogPosts}}" class="qCategoryLink"></Label>
+    <Label text="{{ isEngLang ? whitePapersEN : whitePapersES }}" tap="{{navigateToPaidWhitePapers}}" cssClass="qCategory" />
+  </StackLayout>
+</ScrollView>

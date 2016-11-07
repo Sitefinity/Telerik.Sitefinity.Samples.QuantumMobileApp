@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:rad="shared/views"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" navigatingTo="onNavigatingTo" loaded="onLoaded">
+  <rad:navBarWL></rad:navBarWL>
+  <drawer:RadSideDrawer id="mainMenuSideDrawer">
+    <drawer:RadSideDrawer.mainContent>
+      <StackLayout>
+        <ScrollView>
+          <StackLayout>
+            <StackLayout class="qImageCategory">              
+              <Image src="~/images/DevelopmentCategory.png" horizontalAlignment="center" stretch="none" tap="{{navigateToDevNews}}" />
+            </StackLayout>
+            <StackLayout class="qImageCategory">              
+              <Image src="~/images/DesignCategory.png" horizontalAlignment="center" stretch="none" tap="{{navigateToDesignNews}}" />
+            </StackLayout>
+            <StackLayout class="qImageCategory">              
+              <Image src="~/images/MarketingCategory.png" horizontalAlignment="center" stretch="none" tap="{{navigateToMarketingNews}}" />
+            </StackLayout>
+          </StackLayout>
+        </ScrollView>      
+      </StackLayout>
+    </drawer:RadSideDrawer.mainContent>
+    <drawer:RadSideDrawer.drawerContent >
+      <rad:sideMenuContent></rad:sideMenuContent>
+    </drawer:RadSideDrawer.drawerContent>
+  </drawer:RadSideDrawer>
+</Page>

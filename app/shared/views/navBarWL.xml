@@ -1,0 +1,7 @@
+<ActionBar class="qActionBar">
+  <StackLayout orientation="horizontal">
+    <Image src="~/images/Logo.png" class="qLogo"></Image>
+  </StackLayout>
+  <ActionItem tap="{{showMenu}}"
+  icon="~/images/Menu.png" android.position="actionBar"/>
+</ActionBar>
