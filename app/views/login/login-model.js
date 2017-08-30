@@ -6,6 +6,8 @@ var http = require("http");
 var showLogInButtonProp = "showLogInButton";
 var usernameProp = "username";
 var passwordProp = "password";
+var clientId = "quantum-ns-app";
+var clientSecret = "secret";
 
 function createViewModel() {
     var viewModel = new Observable();
@@ -13,31 +15,44 @@ function createViewModel() {
     viewModel.set(usernameProp, "");
     viewModel.set(passwordProp, "");
 
-
     viewModel.logIn = function () {
         viewModel.set(showLogInButtonProp, false);
-        http.request({
-            url: ServiceEndPoint + LogInServicePath,
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            content: JSON.stringify({ 'username': viewModel.get(usernameProp), 'password': viewModel.get(passwordProp) })
-        }).then(function (response) {
-            var result = response.content.toJSON();
 
-            if (result.value == undefined || result.value == null) {
-                alert("Try again");
+        var formData = new FormData();
+        formData.append(usernameProp, viewModel.get(usernameProp));
+        formData.append(passwordProp, viewModel.get(passwordProp));
+        formData.append("grant_type", "password");
+        formData.append("scope", "openid offline_access");
+        formData.append("client_id", clientId);
+        formData.append("client_secret", clientSecret);
+
+        http.request({
+            url: ServiceEndPoint + AuthServicePath,
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            content: formData
+        }).then(function (response) {
+            var result;
+            try {
+                result = response.content.toJSON();
+            }
+            catch (e) {
+                console.dir(e);
+                alert("Error");
                 viewModel.set(showLogInButtonProp, true);
                 return;
             }
 
-            TOKEN = result.value;
+            if (!result.access_token) {
+                alert("Try again");
+                viewModel.set(showLogInButtonProp, true);
+                return;
+            }
+            TOKEN = result;
+            isLoggedIn = true;
 
-            var navigationEntry = {
-                moduleName: 'views/whitePapers/whitePapers',
-                animated: false
-            };
+            getSFUserInformation();
 
-            frames.topmost().navigate(navigationEntry);
 
         }, function (e) {
             viewModel.set(showLogInButtonProp, true);
@@ -47,6 +62,64 @@ function createViewModel() {
 
     return viewModel;
 }
+
+var getSFUserInformation = function () {
+    http.request({
+        url: ServiceEndPoint + CurrentUserServicePath,
+        method: "GET",
+        headers: {
+            "x-sf-service-request": "true",
+            "Authorization": TOKEN.token_type + " " + TOKEN.access_token
+        }
+    }).then(function (response) {
+        var result;
+        try {
+            result = response.content.toJSON();
+            CurrentUser = result.value;
+            if (global.Client) {
+                sendLoginInteraction();
+                checkIfUserIsInPersona();
+            } else {
+                frames.topmost().goBack();
+            }
+        } catch (e) {
+        }
+    }, function (e) {
+        alert("Try again. " + e);
+    });
+};
+
+var sendLoginInteraction = function () {
+    Client.writeSentence({
+        subjectKey: CurrentUser.Id,
+        predicate: 'Logged in',
+        object: 'NativeScript Quantum App'
+    });
+
+    Client.writeSubjectMetadata(CurrentUser.Id, {
+        Email: CurrentUser.Email
+    });
+
+    Client.flushData().then(function (data) {
+    });
+};
+
+var checkIfUserIsInPersona = function () {
+    var personaIds = [ManagerPersonaId];
+    Client.isInPersonas(personaIds, CurrentUser.Id).then(function (data) {
+        var personas = data.toJSON().items;
+        if (personas.length) {
+            personas.forEach(function (persona) {
+                if (persona.Id === ManagerPersonaId) {
+                    isInManagerPersona = true;
+                    personalizationReportSegment = 'IT Manager';
+                }
+            }, this);
+        }
+
+        frames.topmost().goBack();
+    });
+};
 
 exports.createViewModel = createViewModel;
 

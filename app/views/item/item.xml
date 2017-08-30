@@ -7,8 +7,8 @@
           <Label text="{{ title }}" textWrap="true" class="qItemTitle" />
           <Label text="{{'Author: ' + author }}" textWrap="true" class="qItemAuthor" visibility="{{ author ? 'visible' : 'collapsed' }}" />
           <Label text="{{ publicationDate | utcDateConverter('') }}" textWrap="true" class="qDateList" />
-          <IC:WebImage src="{{ relatedMedia ? relatedMedia: '~/images/Blog.png' }}" class="qItemImage">
-          </IC:WebImage>
+          <Image src="{{ relatedMedia ? relatedMedia: '~/images/blog.png' }}" class="qItemImage">
+          </Image>
           <HtmlView  html="{{ content }}" class="qItemHtmlView" />
         </StackLayout>
     </drawer:RadSideDrawer.mainContent>

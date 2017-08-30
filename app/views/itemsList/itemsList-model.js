@@ -17,12 +17,19 @@ function createViewModel() {
 
             var items = response.content.toJSON().value;
 
-            var array = [];
-            for (var i = 0; i < items.length; i++) {
-                array.push(new Observable(items[i]));
+            // Sorting by Development category if in Manager persona
+            if (isInManagerPersona) {
+                items.sort(function (a, b) {
+                    if (b.Category) {
+                        return b.Category[0] === DevelopmentCategoryId ? 1 : 0;
+                    }
+                    return 0;
+                });
             }
 
-            var newsDataSource = new observableArrayModule.ObservableArray(array);
+            convertCategoriesToStrings(items);
+
+            var newsDataSource = new observableArrayModule.ObservableArray(items);
 
             viewModel.set("newsDataSource", newsDataSource);
         }, function (e) {
@@ -32,13 +39,13 @@ function createViewModel() {
     };
 
     viewModel.refreshInES = function () {
-        if(isEngLang) {
+        if (isEngLang) {
             viewModel.refreshUI("ES");
         }
     };
 
     viewModel.refreshInEN = function () {
-        if(!isEngLang) {
+        if (!isEngLang) {
             viewModel.refreshUI("EN");
         }
     };

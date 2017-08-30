@@ -1,11 +1,13 @@
 <ActionBar class="qActionBar">
   <StackLayout orientation="horizontal">
-    <Image src="~/images/Logo.png" class="qLogo" stretch="none"></Image>
+    <Image src="~/images/Logo.png" class="qLogo" stretch="none" tap="{{navigateToMainPage}}"></Image>
   </StackLayout>
+  <ActionItem text="login" tap="{{navigateToLogin}}" visibility="{{isLoggedIn ? 'collapse' : 'visible'}}" android.position="actionBar" />  
+  <ActionItem text="logout" tap="{{logout}}" visibility="{{!isLoggedIn ? 'collapse' : 'visible'}}" android.position="actionBar" />
   <ActionItem tap="{{refreshInES}}"
       icon="{{isEngLang ? '~/images/ES-IN.png' : '~/images/ES.png'  }}" android.position="actionBar"/>
   <ActionItem tap="{{refreshInEN}}"
   icon="{{isEngLang ? '~/images/EN.png' : '~/images/EN-IN.png'  }}" android.position="actionBar"/>
-  <ActionItem tap="{{showMenu}}"
+  <ActionItem tap="{{toggleMenu}}"
   icon="~/images/Menu.png" android.position="actionBar"/>
 </ActionBar>

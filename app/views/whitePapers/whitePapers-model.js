@@ -12,18 +12,18 @@ function createViewModel() {
     viewModel.getPaidWhitePapers = function () {
         var url = ServiceEndPoint + WhitePapersServicePath;
 
-        http.request({ url: url, method: "GET", headers: { Authorization: TOKEN } }).then(function (response) {
+        http.request({ url: url, method: "GET", headers: { Authorization: TOKEN.token_type + ' ' + TOKEN.access_token } }).then(function (response) {
             //http://10.0.2.2:89 or http://10.0.3.2:89 is your localhost because of the VM and the emulator
             //E.g. http://10.0.3.2:89/api/mycustomservice/newsitems?$select=Id,Title,PublicationDate
 
             var items = response.content.toJSON().value;
 
-            var array = [];
-            for (var i = 0; i < items.length; i++) {
-                array.push(new Observable(items[i]));
-            }
+            sortByPersona(items);
+            convertCategoriesToStrings(items);
 
-            var whitePapersDataSource = new observableArrayModule.ObservableArray(array);
+            // Converting category to string. TODO: Replace with working pipe/filter
+
+            var whitePapersDataSource = new observableArrayModule.ObservableArray(items);
 
             viewModel.set("whitePapersDataSource", whitePapersDataSource);
 
@@ -38,7 +38,7 @@ function createViewModel() {
 
         var whitePaperPath = viewModel.get("whitePapersDataSource").getItem(index).Url;
 
-        utils.openUrl(ServiceEndPointWS + whitePaperPath);
+        utils.openUrl(whitePaperPath);
     };
 
     viewModel.set("whitePapersDataSource", []);
@@ -47,5 +47,16 @@ function createViewModel() {
 
     return viewModel;
 }
+
+var sortByPersona = function (items) {
+    if (isInManagerPersona) {
+        items.sort(function (a, b) {
+            if (a.Category) {
+                return a.Category[0] === DevelopmentCategoryId ? -1 : 1;
+            }
+            return 1;
+        });
+    }
+};
 
 exports.createViewModel = createViewModel;

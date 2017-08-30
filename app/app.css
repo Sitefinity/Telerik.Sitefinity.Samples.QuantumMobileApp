@@ -1,7 +1,7 @@
 ﻿/*#region ListView*/
 
 .qDateList {
-    font-size:8;
+    font-size:10;
     margin-left: 5;
     margin-bottom: 5;
 }
@@ -18,8 +18,7 @@
     background-color:white;    
     border-width:1;
     border-color:#00B4C9;
-}
-
+} 
 /*#endregion*/
 
 /*#region Drawer Content*/
@@ -34,8 +33,9 @@
 .qCategory {
     font-size:20;
     text-align:left;
-    margin-bottom:5;
     margin-top:30;
+    margin-bottom:5;
+    margin-left:20;
     text-transform: uppercase;
 }
 
@@ -52,11 +52,7 @@
     text-align:left;
     margin-top:3;
     margin-bottom:3;
-}
-
-.qCategory,
-.qCategoryLink {
-    margin-left:20;
+    margin-left:30;
 }
 /*#endregion*/
 
