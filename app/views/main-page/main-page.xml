@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:rad="shared/views"
-      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" navigatingTo="onNavigatingTo" loaded="onLoaded">
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" navigatingTo="onNavigatingTo">
   <rad:navBarWL></rad:navBarWL>
   <drawer:RadSideDrawer id="mainMenuSideDrawer">
     <drawer:RadSideDrawer.mainContent>
