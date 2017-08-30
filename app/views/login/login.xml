@@ -11,8 +11,6 @@
           <TextField text="{{username}}" hint="username" class="qLoginInput" horizontalAlignment="center" ></TextField>
           <TextField text="{{password}}" secure="true" class="qLoginPass" hint="password" horizontalAlignment="center"></TextField>
           <Button text="LOGIN" tap="{{logIn}}" class="qLogInButton"  visibility="{{ showLogInButton ? 'visible' : 'collapsed' }}" horizontalAlignment="center"></Button>
-          <Label text="Logging please wait..." textWrap="true" class="qItemsTitle"  visibility="{{ !showLogInButton ? 'visible' : 'collapsed' }}" />
-          
         </StackLayout>
     </drawer:RadSideDrawer.mainContent>
     <drawer:RadSideDrawer.drawerContent >
