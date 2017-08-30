@@ -80,7 +80,7 @@ global.generatePersonalizationReportSentence = function (subjectKey, pageGuid, c
     var sentence = {
         predicate: 'Visit',
         subjectKey: subjectKey,
-        object: 'http://app.site.com/' + canonicalUrl + '/',
+        object: canonicalUrl + '/',
         objectMetadata: objectMetadata
     };
 
@@ -149,7 +149,7 @@ global.extendModelWithNatigation = function (viewModel, page) {
             if (CurrentUser.Id && Client) {
                 var canonicalUrl = 'shared/views/sideMenuContent';
                 var drawerPageGuid = '55941a9e-ebf2-4253-b528-2b68aff0ef47';
-                var prSentence = generatePersonalizationReportSentence(CurrentUser.Id, page.bindingContext.pageGuid, 'Side menu', canonicalUrl, global.personalizationReportSegment);
+                var prSentence = generatePersonalizationReportSentence(CurrentUser.Id, drawerPageGuid, 'Side menu', canonicalUrl, global.personalizationReportSegment);
                 Client.writeSentence(prSentence);
                 Client.flushData();
             }
