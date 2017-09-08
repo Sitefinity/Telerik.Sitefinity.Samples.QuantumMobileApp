@@ -76,7 +76,7 @@ var getSFUserInformation = function () {
         try {
             result = response.content.toJSON();
             CurrentUser = result.value;
-            if (global.Client) {
+            if (global.DecClient) {
                 sendLoginInteraction();
                 checkIfUserIsInPersona();
             } else {
@@ -90,23 +90,22 @@ var getSFUserInformation = function () {
 };
 
 var sendLoginInteraction = function () {
-    Client.writeSentence({
-        subjectKey: CurrentUser.Id,
-        predicate: 'Logged in',
-        object: 'NativeScript Quantum App'
+    global.DecClient.writeInteraction({
+        S: CurrentUser.Id,
+        P: 'Logged in',
+        O: 'NativeScript Quantum App'
     });
 
-    Client.writeSubjectMetadata(CurrentUser.Id, {
+    global.DecClient.writeSubjectMetadata(CurrentUser.Id, {
         Email: CurrentUser.Email
     });
 
-    Client.flushData().then(function (data) {
-    });
+    global.DecClient.flushData();
 };
 
 var checkIfUserIsInPersona = function () {
     var personaIds = [ManagerPersonaId];
-    Client.isInPersonas(personaIds, CurrentUser.Id).then(function (data) {
+    global.DecClient.isInPersonas(personaIds, CurrentUser.Id).then(function (data) {
         var personas = data.toJSON().items;
         if (personas.length) {
             personas.forEach(function (persona) {
@@ -122,7 +121,3 @@ var checkIfUserIsInPersona = function () {
 };
 
 exports.createViewModel = createViewModel;
-
-
-
-

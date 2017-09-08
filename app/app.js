@@ -1,6 +1,6 @@
 var application = require("application");
 var Observable = require("data/observable").Observable;
-var DECClient = require("./custom/dec-client");
+var DecClient = require("nativescript-dec-sdk").DecClient;
 var frames = require("ui/frame");
 var http = require("http");
 var view = require("ui/core/view");
@@ -26,6 +26,8 @@ var summarySubstring = function (value, format) {
 };
 
 global.convertCategoriesToStrings = function (items) {
+    if (!items) return;
+
     items.forEach(function (item) {
         if (item.Category[0]) {
             switch (item.Category[0]) {
@@ -61,30 +63,6 @@ global.formatString = function (value, replacements) {
     }
 
     return formatted;
-};
-
-global.generatePersonalizationReportSentence = function (subjectKey, pageGuid, canonicalTitle, canonicalUrl, segment) {
-    var objectMetadata = {
-        Id: pageGuid,
-        PageId: pageGuid,
-        Language: 'Eng',
-        ContentType: 'Page',
-        CanonicalTitle: canonicalTitle,
-        CanonicalUrl: canonicalUrl,
-        Personalization: [{
-            Type: 'Page',
-            Segment: segment || 'IT Manager'
-        }]
-    };
-
-    var sentence = {
-        predicate: 'Visit',
-        subjectKey: subjectKey,
-        object: canonicalUrl + '/',
-        objectMetadata: objectMetadata
-    };
-
-    return sentence;
 };
 
 global.extendModelWithNatigation = function (viewModel, page) {
@@ -146,12 +124,17 @@ global.extendModelWithNatigation = function (viewModel, page) {
             sideMenu.toggleDrawerState();
         }
         if (sideMenu.getIsOpen()) {
-            if (CurrentUser.Id && Client) {
-                var canonicalUrl = 'shared/views/sideMenuContent';
-                var drawerPageGuid = '55941a9e-ebf2-4253-b528-2b68aff0ef47';
-                var prSentence = generatePersonalizationReportSentence(CurrentUser.Id, drawerPageGuid, 'Side menu', canonicalUrl, global.personalizationReportSegment);
-                Client.writeSentence(prSentence);
-                Client.flushData();
+            if (CurrentUser.Id && global.DecClient) {
+                var prInteraction = global.DecClient.buildPersonalizationReportInteraction({
+                    subjectKey: CurrentUser.Id,
+                    pageGuid: '55941a9e-ebf2-4253-b528-2b68aff0ef47',
+                    canonicalTitle: 'Side menu',
+                    canonicalUrl: 'shared/views/sideMenuContent',
+                    segment: global.personalizationReportSegment,
+                    language: 'Eng'
+                });
+                global.DecClient.writeInteraction(prInteraction);
+                global.DecClient.flushData();
             }
         }
     };
@@ -256,13 +239,13 @@ global.personalizationReportSegment = null;
 global.CurrentUser = {};
 
 // The following is used to initialize the DEC Client, uncomment if you want to use it.
-// global.Client = new DECClient({
+// global.DecClient = new DecClient({
 //     apiKey: '<please enter the apikey of your datacenter here>',
 //     source: 'QuantumDecDemo',
 //     authToken: 'appauth <please enter the access token of your datacenter here>'
 // });
 
-global.Client = new DECClient({
+global.DecClient = new DecClient({
     apiKey: '6788ce78-a40b-b787-f323-3d879ce65fc1',
     source: 'QuantumDecDemo',
     authToken: 'appauth 362E0D5E-814C-5A55-3218-2F2ACDD47611'

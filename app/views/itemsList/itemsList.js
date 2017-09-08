@@ -26,11 +26,17 @@ function onNavigatingTo(args) {
 
     page.bindingContext.getAllItems();
 
-    if (CurrentUser.Id && Client) {
-        var canonicalUrl = 'views/itemsList/' + page.bindingContext.itemsType;
-        var prSentence = generatePersonalizationReportSentence(CurrentUser.Id, page.bindingContext.pageGuid, page.bindingContext.itemsTitle, canonicalUrl, global.personalizationReportSegment);
-        Client.writeSentence(prSentence);
-        Client.flushData();
+    if (CurrentUser.Id && global.DecClient) {
+        var prInteraction = global.DecClient.buildPersonalizationReportInteraction({
+            subjectKey: CurrentUser.Id,
+            pageGuid: page.bindingContext.pageGuid,
+            canonicalTitle: page.bindingContext.itemsTitle,
+            canonicalUrl: 'views/itemsList/' + page.bindingContext.itemsType,
+            segment: global.personalizationReportSegment,
+            language: 'Eng'
+        });
+        global.DecClient.writeInteraction(prInteraction);
+        global.DecClient.flushData();
     }
 }
 

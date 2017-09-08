@@ -18,7 +18,6 @@ function createViewModel() {
 
             var items = response.content.toJSON().value;
 
-            sortByPersona(items);
             convertCategoriesToStrings(items);
 
             // Converting category to string. TODO: Replace with working pipe/filter
@@ -47,16 +46,5 @@ function createViewModel() {
 
     return viewModel;
 }
-
-var sortByPersona = function (items) {
-    if (isInManagerPersona) {
-        items.sort(function (a, b) {
-            if (a.Category) {
-                return a.Category[0] === DevelopmentCategoryId ? -1 : 1;
-            }
-            return 1;
-        });
-    }
-};
 
 exports.createViewModel = createViewModel;
