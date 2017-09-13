@@ -251,9 +251,11 @@ global.DecClient = new DecClient({
     authToken: 'appauth 362E0D5E-814C-5A55-3218-2F2ACDD47611'
 });
 
-application.setResources(utcDateConverter);
-application.setResources(utcDotNetDateConverter);
-application.setResources(summarySubstring);
+var resources = application.getResources();
+resources['utcDateConverter'] = utcDateConverter;
+resources['utcDotNetDateConverter'] = utcDotNetDateConverter;
+resources['summarySubstring'] = summarySubstring;
+application.setResources(resources);
 
 application.on(application.launchEvent, function (args) {
     if (args.android) {

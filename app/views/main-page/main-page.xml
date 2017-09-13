@@ -4,7 +4,7 @@
   <rad:navBarWL></rad:navBarWL>
   <drawer:RadSideDrawer id="mainMenuSideDrawer">
     <drawer:RadSideDrawer.mainContent>
-      <StackLayout>
+      <StackLayout class="qMainPage">
         <ScrollView>
           <StackLayout>
             <StackLayout class="qImageCategory">              

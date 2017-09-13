@@ -99,12 +99,11 @@
 
 .qLoginPass,
 .qLoginInput {
-    border-width:2;
+    border-bottom-width:2;
     border-color:#00B4C9;
-    border-radius: 4;
     width:280;
     text-align: left;
-    height: 38;
+    height: 50;
     font-size:16;
 }
 
@@ -131,13 +130,19 @@
 
 /*#region Main Page*/
 
+.qMainPage {
+    background-color: #00B4C9;
+}
+
 .qImageCategory {
     height: 200;
     background-color: #00B4C9;
     width: 100%;
     text-align: center;
     vertical-align:center;
+    margin-top:20;
 }
+
 
 /*#endregion*/
 
