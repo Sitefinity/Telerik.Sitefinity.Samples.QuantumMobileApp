@@ -1,4 +1,6 @@
 {
+	"name": "nativescript-quantum-mobile-app",
+	"version": "2.0.0",
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "readme": "NativeScript Application",
@@ -10,7 +12,7 @@
     }
   },
   "dependencies": {
-    "nativescript-dec-sdk": "file:nativescript-dec-sdk-1.0.0.tgz",
+    "nativescript-dec-sdk": "1.0.2",
     "nativescript-telerik-ui-pro": "file:.\\nativescript-ui-debug-dev-pro.tgz",
     "nativescript-web-image-cache": "^4.2.2",
     "tns-core-modules": "3.2.0"

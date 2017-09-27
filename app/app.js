@@ -144,7 +144,6 @@ global.extendModelWithNatigation = function (viewModel, page) {
             animated: true
         };
 
-        //Uncomment the following to code to persist the TOKEN and avoid login after the first time
         if (TOKEN === null) {
             navigationEntry.moduleName = "views/login/login";
         } else {
@@ -202,8 +201,6 @@ global.extendModelWithNatigation = function (viewModel, page) {
 }
 
 //This is the localhost endpoint
-//global.ServiceEndPoint = "http://10.0.3.2:89/";
-
 global.ServiceEndPoint = "http://192.168.132.36:8087/";
 global.ServiceEndPointWS = "http://192.168.132.36:8087"; //this is the ServiceEndPoint without the slash
 
@@ -215,9 +212,7 @@ global.BlogsServicePath = "api/quantum-mobile/blogposts";
 global.WhitePapersServicePath = "api/quantum-mobile/documents";
 global.CurrentUserServicePath = "api/quantum-mobile/users/current";
 
-//http://localhost:89/api/mycustomservice/newsitems(eb57052e-9a43-66a7-8579-ff00003bc1d1)?$select=Title,Content,PublicationDate&sf_culture=es
 global.NewsItemServicePath = "api/quantum-mobile/newsitems({0})?$select=Title,Content,PublicationDate,Author,RelatedMedia&sf_culture={1}";
-//global.NewsItemServicePath = "api/mycustomservice/blogposts({0})?$select=Title,Content,PublicationDate&sf_culture={1}";
 global.BlogServicePath = "api/quantum-mobile/blogposts({0})?$select=Title,Content,PublicationDate&sf_culture={1}";
 
 global.HierarchyTaxaPath = "api/quantum-mobile/hierarchy-taxa";
@@ -238,18 +233,14 @@ global.isEngLang = true;
 global.personalizationReportSegment = null;
 global.CurrentUser = {};
 
-// The following is used to initialize the DEC Client, uncomment if you want to use it.
+/* The following is used to initialize the DEC Client.
+ * Uncomment and fill the needed fields if you want to use it.
+ */  
 // global.DecClient = new DecClient({
 //     apiKey: '<please enter the apikey of your datacenter here>',
 //     source: 'QuantumDecDemo',
 //     authToken: 'appauth <please enter the access token of your datacenter here>'
 // });
-
-global.DecClient = new DecClient({
-    apiKey: '6788ce78-a40b-b787-f323-3d879ce65fc1',
-    source: 'QuantumDecDemo',
-    authToken: 'appauth 362E0D5E-814C-5A55-3218-2F2ACDD47611'
-});
 
 var resources = application.getResources();
 resources['utcDateConverter'] = utcDateConverter;
