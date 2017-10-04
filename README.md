@@ -15,6 +15,13 @@ global.ServiceEndPointWS = "http://192.168.152.142:4774"; //the same address lik
 keep in mind that http://10.0.2.2:89 or http://10.0.3.2:89 is your localhost because of the VM and the emulator.
 In case that you want yo access another machine from your intranet use the IP instead of the machine's name 
 
+#### *Important:* In order to get New's and Blog's Categories you need to make a small change in Sitefinity's ***quantum-mobile*** web service.
+1. In Sitefinity's backend go to "Administration -> Settings -> Advanced".
+1. Then go to "WebServices -> Routes -> Frontend -> Services -> quantum-mobile -> Type".
+   * Go to "Telerik.Sitefinity.News.Model.NewsItem -> Property mappings -> Category" and check the "Selected by default" checkbox and save the change.
+   * Go to "Telerik.Sitefinity.Blogs.Model.BlogPost -> Property mappings -> Category" and check the "Selected by default" checkbox and save the change.
+---
+
 ## The app is using [Progress Sitefinity Digital Experience Cloud](https://docs.sitefinity.com/dec) for tracking and content personalization. In order to enable it you need to do the following:
 
 1. Log in to [Digital Experience Cloud](https://dec.sitefinity.com/) web application.
@@ -28,3 +35,4 @@ global.DecClient = new DecClient({
 });
 ```
 The app will be working without setting up the Digital Experience Clound but there will be no tracking or personalization of content.
+
