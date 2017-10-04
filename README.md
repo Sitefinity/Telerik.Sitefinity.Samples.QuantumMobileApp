@@ -15,7 +15,7 @@ global.ServiceEndPointWS = "http://192.168.152.142:4774"; //the same address lik
 keep in mind that http://10.0.2.2:89 or http://10.0.3.2:89 is your localhost because of the VM and the emulator.
 In case that you want yo access another machine from your intranet use the IP instead of the machine's name 
 
-#### *Important:* In order to get New's and Blog's Categories you need to make a small change in Sitefinity's ***quantum-mobile*** web service.
+#### *Important:* In order to get New's and Blog's Categories you need to make a small change in Sitefinity's ***quantum-mobile*** web service settings.
 1. In Sitefinity's backend go to "Administration -> Settings -> Advanced".
 1. Then go to "WebServices -> Routes -> Frontend -> Services -> quantum-mobile -> Type".
    * Go to "Telerik.Sitefinity.News.Model.NewsItem -> Property mappings -> Category" and check the "Selected by default" checkbox and save the change.
