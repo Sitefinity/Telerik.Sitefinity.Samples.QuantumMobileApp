@@ -1,10 +1,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:rad="shared/views" 
-      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" 
+      xmlns:nsDrawer="nativescript-pro-ui/sidedrawer" 
       navigatingTo="onNavigatingTo">
   <rad:navBarWL></rad:navBarWL>
-  <drawer:RadSideDrawer id="mainMenuSideDrawer">
-    <drawer:RadSideDrawer.mainContent>
+  <nsDrawer:RadSideDrawer id="mainMenuSideDrawer">
+    <nsDrawer:RadSideDrawer.mainContent>
       <StackLayout >
       <Label text="White Papers" horizontalAlignment="center" class="qItemsTitle" />
         <ListView items="{{ whitePapersDataSource }}" itemTap="{{listViewItemTap}}" class="qListView">
@@ -20,9 +20,9 @@
           </ListView.itemTemplate>
         </ListView>
       </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent >
+    </nsDrawer:RadSideDrawer.mainContent>
+    <nsDrawer:RadSideDrawer.drawerContent >
       <rad:sideMenuContent></rad:sideMenuContent>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+    </nsDrawer:RadSideDrawer.drawerContent>
+  </nsDrawer:RadSideDrawer>
 </Page>

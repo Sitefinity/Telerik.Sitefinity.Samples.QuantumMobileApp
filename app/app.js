@@ -201,8 +201,8 @@ global.extendModelWithNatigation = function (viewModel, page) {
 }
 
 //This is the localhost endpoint
-global.ServiceEndPoint = "http://192.168.132.36:8087/";
-global.ServiceEndPointWS = "http://192.168.132.36:8087"; //this is the ServiceEndPoint without the slash
+global.ServiceEndPoint = "http://192.168.1.40/";
+global.ServiceEndPointWS = "http://192.168.1.40"; //this is the ServiceEndPoint without the slash
 
 global.AuthServicePath = "Sitefinity/Authenticate/OpenID/connect/token";
 

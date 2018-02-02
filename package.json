@@ -1,27 +1,27 @@
 {
 	"name": "nativescript-quantum-mobile-app",
 	"version": "2.0.0",
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
-  "repository": "<fill-your-repository-here>",
-  "nativescript": {
-    "id": "org.nativescript.SitefinityQ",
-    "tns-android": {
-      "version": "3.2.0"
-    }
-  },
-  "dependencies": {
-    "nativescript-dec-sdk": "1.0.2",
-    "nativescript-telerik-ui-pro": "file:.\\nativescript-ui-debug-dev-pro.tgz",
-    "nativescript-web-image-cache": "^4.2.2",
-    "tns-core-modules": "3.2.0"
-  },
-  "devDependencies": {
-    "babel-traverse": "6.26.0",
-    "babel-types": "6.26.0",
-    "babylon": "6.18.0",
-    "filewalker": "0.1.3",
-    "lazy": "1.0.11"
-  }
+	"description": "NativeScript Application",
+	"license": "SEE LICENSE IN <your-license-filename>",
+	"readme": "NativeScript Application",
+	"repository": "<fill-your-repository-here>",
+	"nativescript": {
+		"id": "org.nativescript.SitefinityQ",
+		"tns-android": {
+			"version": "3.4.1"
+		}
+	},
+	"dependencies": {
+		"nativescript-dec-sdk": "1.0.2",
+		"nativescript-pro-ui": "3.3.0",
+		"nativescript-web-image-cache": "^4.2.2",
+		"tns-core-modules": "^3.4.0"
+	},
+	"devDependencies": {
+		"babel-traverse": "6.26.0",
+		"babel-types": "6.26.0",
+		"babylon": "6.18.0",
+		"filewalker": "0.1.3",
+		"lazy": "1.0.11"
+	}
 }

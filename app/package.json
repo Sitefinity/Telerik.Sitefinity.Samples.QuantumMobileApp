@@ -24,5 +24,11 @@
 	"homepage": "https://github.com/NativeScript/template-hello-world",
 	"android": {
 		"v8Flags": "--expose_gc"
+	},
+	"dependencies": {
+		"nativescript-pro-ui": "^3.3.0"
+	},
+	"devDependencies": {
+		"tns-core-modules": "^3.4.0"
 	}
 }
