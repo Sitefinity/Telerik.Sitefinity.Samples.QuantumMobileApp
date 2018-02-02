@@ -18,7 +18,7 @@ function createViewModel() {
             var item = response.content.toJSON();
 
             viewModel.set("title", item.Title);
-            viewModel.set("publicationDate", item.PublicationDate);
+            viewModel.set("publicationDate", item.PublicationDate); 
             viewModel.set("content", item.Content);
             viewModel.set("author", item.Author);
 
