@@ -1,5 +1,5 @@
 # QuantumMobileApp
-Integration with the Quantum web site
+Integration with the Quantum web site. https://github.com/Sitefinity-SDK/Telerik.Sitefinity.Samples.Quantum
 
 ## Install the newest version of the Quantum website
 
