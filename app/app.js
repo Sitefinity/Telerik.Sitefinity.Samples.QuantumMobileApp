@@ -193,7 +193,7 @@ global.extendModelWithNatigation = function (viewModel, page) {
     viewModel.set("whitePapersES", "Libros Blancos ");
 
     viewModel.set("designES", "Diseño web");
-    viewModel.set("marketingES", "Márketing");
+    viewModel.set("marketingES", "Márketing"); 
     viewModel.set("developmentES", "Desarrollo");
 
 
@@ -201,8 +201,8 @@ global.extendModelWithNatigation = function (viewModel, page) {
 }
 
 //This is the localhost endpoint
-global.ServiceEndPoint = "http://quantummobile.azurewebsites.net/";
-global.ServiceEndPointWS = "http://quantummobile.azurewebsites.net"; //this is the ServiceEndPoint without the slash
+global.ServiceEndPoint = "http://10.0.2.2/";//"http://quantummobile.azurewebsites.net/"; 
+global.ServiceEndPointWS = "http://10.0.2.2";//"http://quantummobile.azurewebsites.net"; //this is the ServiceEndPoint without the slash
 
 global.AuthServicePath = "Sitefinity/Authenticate/OpenID/connect/token";
 
