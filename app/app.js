@@ -201,8 +201,8 @@ global.extendModelWithNatigation = function (viewModel, page) {
 }
 
 //This is the localhost endpoint
-global.ServiceEndPoint = "http://10.0.2.2/";//"http://quantummobile.azurewebsites.net/"; 
-global.ServiceEndPointWS = "http://10.0.2.2";//"http://quantummobile.azurewebsites.net"; //this is the ServiceEndPoint without the slash
+global.ServiceEndPoint = "http://192.168.1.40/";//"http://quantummobile.azurewebsites.net/"; 
+global.ServiceEndPointWS = "http://192.168.1.40";//"http://quantummobile.azurewebsites.net"; //this is the ServiceEndPoint without the slash
 
 global.AuthServicePath = "Sitefinity/Authenticate/OpenID/connect/token";
 
@@ -224,7 +224,7 @@ global.TOKEN = null;
 global.DesignCategoryId = null;
 global.MarketingCategoryId = null;
 global.DevelopmentCategoryId = null;
-global.ManagerPersonaId = 18;
+global.ManagerPersonaId = 1;
 
 global.isLoggedIn = false;
 global.isInManagerPersona = false;
@@ -239,7 +239,7 @@ global.CurrentUser = {};
 global.DecClient = new DecClient({
      apiKey: 'ef862e1b-6cc8-3a60-60a3-c0beb67fb038',
      source: 'QuantumDecDemo',
-     authToken: 'ef862e1b-6cc8-3a60-60a3-c0beb67fb038'
+     authToken: 'appauth ef862e1b-6cc8-3a60-60a3-c0beb67fb038'
  });
 
 var resources = application.getResources();
