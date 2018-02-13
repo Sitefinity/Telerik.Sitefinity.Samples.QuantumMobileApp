@@ -2,14 +2,14 @@
   <StackLayout class="qDrawerMenuContent">
     <Label text="{{ isEngLang ? newsEN : newsES }}" class="qCategory" tap="{{navigateToAllNews}}" />
     <Label class="qUnderLine" horizontalAlignment="left" />    
-    <Label text="{{ isEngLang ? designEN : designES }}" class="qCategoryLink" visibility="{{isInManagerPersona ? 'collapse' : 'visible'}}" tap="{{navigateToDesignNews}}"></Label>
-    <Label text="{{ isEngLang ? marketingEN : marketingES }}" class="qCategoryLink" visibility="{{isInManagerPersona ? 'collapse' : 'visible'}}" tap="{{navigateToMarketingNews}}"></Label>
-    <Label text="{{ isEngLang ? developmentEN : developmentES }}" class="qCategoryLink" tap="{{navigateToDevNews}}"></Label>
+    <Label text="{{ isEngLang ? designEN : designES }}" class="qCategoryLink" tap="{{navigateToDesignNews}}"></Label>
+    <Label text="{{ isEngLang ? marketingEN : marketingES }}" class="qCategoryLink" tap="{{navigateToMarketingNews}}"></Label>
+    <Label text="{{ isEngLang ? developmentEN : developmentES }}" class="qCategoryLink" tap="{{navigateToDevNews}}" visibility="{{isInManagerPersona ? 'collapse' : 'visible'}}" ></Label>
     <Label text="{{ isEngLang ? blogsEN : blogsES }}" tap="{{navigateToAllBlogPosts}}" class="qCategory" />
     <Label class="qUnderLine" horizontalAlignment="left" />
-    <Label text="{{ isEngLang ? designEN : designES }}" tap="{{navigateToDesignBlogPosts}}" visibility="{{isInManagerPersona ? 'collapse' : 'visible'}}" class="qCategoryLink"></Label>
-    <Label text="{{ isEngLang ? marketingEN : marketingES }}" tap="{{navigateToMarketingBlogPosts}}" visibility="{{isInManagerPersona ? 'collapse' : 'visible'}}" class="qCategoryLink"></Label>
-    <Label text="{{ isEngLang ? developmentEN : developmentES }}" tap="{{navigateToDevBlogPosts}}" class="qCategoryLink"></Label>
+    <Label text="{{ isEngLang ? designEN : designES }}" tap="{{navigateToDesignBlogPosts}}" class="qCategoryLink"></Label>
+    <Label text="{{ isEngLang ? marketingEN : marketingES }}" tap="{{navigateToMarketingBlogPosts}}" class="qCategoryLink"></Label>
+    <Label text="{{ isEngLang ? developmentEN : developmentES }}" tap="{{navigateToDevBlogPosts}}" class="qCategoryLink" visibility="{{isInManagerPersona ? 'collapse' : 'visible'}}" ></Label>
     <Label text="{{ isEngLang ? whitePapersEN : whitePapersES }}" tap="{{navigateToPaidWhitePapers}}" class="qCategory" />
   </StackLayout>
 </ScrollView>
