@@ -35,12 +35,20 @@ If using android emulator authenticating against localhost(10.0.2.2) it requires
 1. Go to your Data center through the Administration panel and get the Api key and the Authorization token.
 1. Uncomment and fill in the following code in app.js
 ```js
+var decApiKey = '<please enter the apikey of your datacenter here>';
 global.DecClient = new DecClient({
-    apiKey: '<please enter the apikey of your datacenter here>',
+    apiKey: decApiKey,
     source: 'QuantumDecDemo',
-    authToken: 'appauth <please enter the apikey of your datacenter here>'
+    authToken: 'appauth ' + decApiKey
 });
 ```
 The app will be working without setting up the Digital Experience Clound but there will be no tracking or personalization of content.
 If using android emulator authenticating against  localhost requires you to use your machine's IP address NOT the adroind emlulator local address '10.0.2.2'
 
+## Other areas of interest
+This covers other potential area you can extend customize or reuse in this app.
+
+The DEC data center that this Quantum Web instance and mobile app are connected to have 1 persona with a simple rule of 'if they visit the X page once' they fit.  In order for the persona to be passed from the web application and mobile app you must be logged in as a user in the web app visit the page or complete the persona rule(s), then login to the mobile app.
+
+### How to retrieve DEC persona Id
+Login to your [data center](http://dec.sitefinity.com) click Personas, Click the persona to view it's details, look at the url and identify the id of the persona.
