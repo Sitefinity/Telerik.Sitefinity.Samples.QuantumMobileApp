@@ -1,12 +1,15 @@
 # QuantumMobileApp
+The app is out of the box is hooked up to a public sitefinity instance and will work as is but we incourouge you to setup your own instance for testing.
 
 ## Install the newest version of the Quantum website
- https://github.com/Sitefinity-SDK/Telerik.Sitefinity.Samples.Quantum
+https://github.com/Sitefinity-SDK/Telerik.Sitefinity.Samples.Quantum
 
-## Install NativeScript by following the steps from here https://docs.nativescript.org/start/ns-setup-win
+## Install NativeScript by following the steps from here 
+https://docs.nativescript.org/start/ns-setup-win
 
 ## Setup Emulator(s)
 Android (windows/mac) https://developer.android.com/studio/run/emulator.html
+
 iOS (xCode) https://developer.apple.com/xcode/
 
 ## Host the Qantum website on your IIS
@@ -42,8 +45,8 @@ global.DecClient = new DecClient({
     authToken: 'appauth ' + decApiKey
 });
 ```
-The app will be working without setting up the Digital Experience Clound but there will be no tracking or personalization of content.
-If using android emulator authenticating against  localhost requires you to use your machine's IP address NOT the adroind emlulator local address '10.0.2.2'
+The app will work without setting up the Digital Experience Clound but there will be no tracking or personalization of content.
+If using android emulator authenticating against localhost requires you to use your machine's IP address NOT the adroind emlulator local address '10.0.2.2'
 
 ## Other areas of interest
 This covers other potential area you can extend customize or reuse in this app.
