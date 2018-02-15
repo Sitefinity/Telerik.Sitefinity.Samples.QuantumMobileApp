@@ -1,8 +1,9 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" 
-       xmlns:rad="shared/views" xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" xmlns:IC="nativescript-web-image-cache" navigatingTo="onNavigatingTo">
+       xmlns:rad="shared/views" xmlns:nsDrawer="nativescript-pro-ui/sidedrawer" 
+       xmlns:IC="nativescript-web-image-cache" navigatingTo="onNavigatingTo">
     <rad:navBar></rad:navBar>
-  <drawer:RadSideDrawer id="mainMenuSideDrawer">
-    <drawer:RadSideDrawer.mainContent>
+  <nsDrawer:RadSideDrawer id="mainMenuSideDrawer">
+    <nsDrawer:RadSideDrawer.mainContent>
         <StackLayout >
           <Label text="{{ title }}" textWrap="true" class="qItemTitle" />
           <Label text="{{'Author: ' + author }}" textWrap="true" class="qItemAuthor" visibility="{{ author ? 'visible' : 'collapsed' }}" />
@@ -11,9 +12,9 @@
           </Image>
           <HtmlView  html="{{ content }}" class="qItemHtmlView" />
         </StackLayout>
-    </drawer:RadSideDrawer.mainContent>
-    <drawer:RadSideDrawer.drawerContent >
+    </nsDrawer:RadSideDrawer.mainContent>
+    <nsDrawer:RadSideDrawer.drawerContent >
       <rad:sideMenuContent></rad:sideMenuContent>
-    </drawer:RadSideDrawer.drawerContent>
-  </drawer:RadSideDrawer>
+    </nsDrawer:RadSideDrawer.drawerContent>
+  </nsDrawer:RadSideDrawer>
 </Page>

@@ -193,7 +193,7 @@ global.extendModelWithNatigation = function (viewModel, page) {
     viewModel.set("whitePapersES", "Libros Blancos ");
 
     viewModel.set("designES", "Diseño web");
-    viewModel.set("marketingES", "Márketing");
+    viewModel.set("marketingES", "Márketing"); 
     viewModel.set("developmentES", "Desarrollo");
 
 
@@ -201,14 +201,14 @@ global.extendModelWithNatigation = function (viewModel, page) {
 }
 
 //This is the localhost endpoint
-global.ServiceEndPoint = "http://192.168.132.36:8087/";
-global.ServiceEndPointWS = "http://192.168.132.36:8087"; //this is the ServiceEndPoint without the slash
+global.ServiceEndPoint = "http://quantummobile.azurewebsites.net/"; 
+global.ServiceEndPointWS = "http://quantummobile.azurewebsites.net"; //this is the ServiceEndPoint without the slash
 
 global.AuthServicePath = "Sitefinity/Authenticate/OpenID/connect/token";
 
 global.NewsItemsServicePath = "api/quantum-mobile/newsitems";
 global.BlogsServicePath = "api/quantum-mobile/blogposts";
-// global.LogInServicePath = "api/quantum-mobile/login";
+
 global.WhitePapersServicePath = "api/quantum-mobile/documents";
 global.CurrentUserServicePath = "api/quantum-mobile/users/current";
 
@@ -227,7 +227,7 @@ global.DevelopmentCategoryId = null;
 global.ManagerPersonaId = 18;
 
 global.isLoggedIn = false;
-global.isInManagerPersona = false;
+global.isInManagerPersona = false; 
 global.isEngLang = true;
 
 global.personalizationReportSegment = null;
@@ -236,11 +236,12 @@ global.CurrentUser = {};
 /* The following is used to initialize the DEC Client.
  * Uncomment and fill the needed fields if you want to use it.
  */  
+// var decApiKey = 'ef862e1b-6cc8-3a60-60a3-c0beb67fb038';
 // global.DecClient = new DecClient({
-//     apiKey: '<please enter the apikey of your datacenter here>',
-//     source: 'QuantumDecDemo',
-//     authToken: 'appauth <please enter the access token of your datacenter here>'
-// });
+//      apiKey: decApiKey,
+//      source: 'QuantumDecDemo',
+//      authToken: 'appauth ' + decApiKey
+//  });
 
 var resources = application.getResources();
 resources['utcDateConverter'] = utcDateConverter;

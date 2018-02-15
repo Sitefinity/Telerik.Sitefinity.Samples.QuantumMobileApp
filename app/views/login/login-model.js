@@ -7,7 +7,7 @@ var showLogInButtonProp = "showLogInButton";
 var usernameProp = "username";
 var passwordProp = "password";
 var clientId = "quantum-ns-app";
-var clientSecret = "secret";
+var clientSecret = "kjgf877hjf";
 
 function createViewModel() {
     var viewModel = new Observable();
@@ -29,7 +29,7 @@ function createViewModel() {
         http.request({
             url: ServiceEndPoint + AuthServicePath,
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
             content: formData
         }).then(function (response) {
             var result;
