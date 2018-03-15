@@ -1,5 +1,5 @@
 <ActionBar class="qActionBar">
-  <StackLayout orientation="horizontal">
-    <Image src="~/images/Logo.png" class="qLogo" tap="{{navigateToMainPage}}"></Image>
+  <StackLayout orientation="horizontal" class="qLogoWrapperClean">
+    <Image src="~/images/Logo.png" class="qLogo qLogoClean" tap="{{navigateToMainPage}}"></Image>
   </StackLayout>
 </ActionBar>

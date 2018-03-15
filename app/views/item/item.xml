@@ -7,7 +7,7 @@
         <StackLayout >
           <Label text="{{ title }}" textWrap="true" class="qItemTitle" />
           <Label text="{{'Author: ' + author }}" textWrap="true" class="qItemAuthor" visibility="{{ author ? 'visible' : 'collapsed' }}" />
-          <Label text="{{ publicationDate | utcDateConverter('') }}" textWrap="true" class="qDateList" />
+          <Label text="{{ publicationDate | utcDateConverter('') }}" textWrap="true" class="qItemDate" />
           <Image src="{{ relatedMedia ? relatedMedia: '~/images/blog.png' }}" class="qItemImage">
           </Image>
           <HtmlView  html="{{ content }}" class="qItemHtmlView" />

@@ -18,8 +18,8 @@
                   <Label text="{{ PublicationDate | utcDateConverter('') }}" textWrap="true" class="qDateList" />
                   <Label text="{{ Summary | summarySubstring('') }}" textWrap="true" class="qSummaryItem" />
                 </StackLayout>                
-                <!-- <Image row="0" col="1"  id="imageId" src="{{ RelatedMedia ? RelatedMedia : '~/images/blog.png'  }}" class="qListItemsImage">
-                </Image>    -->
+                <Image row="0" col="1"  id="imageId" src="{{ RelatedMedia ? RelatedMedia : '~/images/blog.png'  }}" class="qListItemsImage">
+                </Image>   
               </GridLayout>
             </ListView.itemTemplate> 
           </ListView>

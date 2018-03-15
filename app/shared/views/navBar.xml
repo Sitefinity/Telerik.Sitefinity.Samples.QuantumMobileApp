@@ -1,6 +1,6 @@
 <ActionBar class="qActionBar">
-  <StackLayout orientation="horizontal">
-    <Image src="~/images/Logo.png" class="qLogo" tap="{{navigateToMainPage}}"></Image>
+  <StackLayout orientation="horizontal"  class="qLogoWrapperNB">
+    <Image src="~/images/Logo.png" class="qLogo qLogoNB" tap="{{navigateToMainPage}}"></Image>
   </StackLayout>
   <ActionItem text="login" tap="{{navigateToLogin}}" visibility="{{isLoggedIn ? 'collapse' : 'visible'}}" android.position="actionBar" />  
   <ActionItem text="logout" tap="{{logout}}" visibility="{{!isLoggedIn ? 'collapse' : 'visible'}}" android.position="actionBar" />

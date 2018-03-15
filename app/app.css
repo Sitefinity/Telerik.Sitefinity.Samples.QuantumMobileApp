@@ -1,9 +1,13 @@
 ﻿/*#region ListView*/
 
 .qDateList {
-    font-size:10;
+    font-size:12;
     margin-left: 5;
     margin-bottom: 5;
+}
+
+.qListView {
+    margin:10;
 }
 
 /*#endregion*/
@@ -11,7 +15,21 @@
 /*#region ActionBar*/
 
 .qLogo {
-    height:40;
+    height:40; 
+}
+
+.qLogoWrapperNB {
+    padding-right: 23;
+}
+
+.qLogoWrapperClean {
+    padding-right:210;
+}
+
+.qLogoWrapperWL {
+    
+    padding-right: 120;
+    
 }
 
 .qActionBar {
@@ -68,6 +86,8 @@
 .qTitleList {
     color: #00B4C9;
     margin-left: 5;
+    margin-top:5;
+    font-size: 14;
 }
 
 .qItemsTitle {
@@ -82,7 +102,7 @@
     margin-right: 10;
     margin-top: 5;
     margin-bottom: 5;
-    font-size: 10;
+    font-size: 12;
 
 }
 
@@ -90,6 +110,13 @@
     background-color:#00B4C9;
     height:1;
     width:228;
+    margin-bottom: 10;
+}
+
+.qItemDate {
+    font-size:12;
+    margin-left: 10;
+    margin-right: 10;
     margin-bottom: 10;
 }
 
@@ -151,22 +178,26 @@
 .qItemTitle {
     font-size: 24;
     color: #00B4C9;
-    margin-left: 5;
+    margin-left: 10;
+    margin-right: 10;
     margin-top:10;
 }
 
 .qItemAuthor {
     font-size: 12;
-    margin-left: 5;
+    margin-left: 10;
+    margin-right: 10;
 }
 
 .qItemHtmlView {
-    margin-left: 5;
-    margin-right: 5;
+    margin-left: 10;
+    margin-right: 10;
 }
 
 .qItemImage {
-    height: 180;
+    height: 100;
+    margin-right: 10;
+    margin-left: 10;
 }
 
 /*#endregion*/

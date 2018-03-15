@@ -26,6 +26,7 @@ var summarySubstring = function (value, format) {
 };
 
 global.convertCategoriesToStrings = function (items) {
+    
     if (!items) return;
 
     items.forEach(function (item) {
@@ -201,8 +202,8 @@ global.extendModelWithNatigation = function (viewModel, page) {
 }
 
 //This is the localhost endpoint
-global.ServiceEndPoint = "http://quantummobile.azurewebsites.net/"; 
-global.ServiceEndPointWS = "http://quantummobile.azurewebsites.net"; //this is the ServiceEndPoint without the slash
+global.ServiceEndPoint = "http://192.168.210.2:12520/"; 
+global.ServiceEndPointWS = "http://192.168.210.2:12520"; //this is the ServiceEndPoint without the slash
 
 global.AuthServicePath = "Sitefinity/Authenticate/OpenID/connect/token";
 
@@ -236,12 +237,13 @@ global.CurrentUser = {};
 /* The following is used to initialize the DEC Client.
  * Uncomment and fill the needed fields if you want to use it.
  */  
-// var decApiKey = 'ef862e1b-6cc8-3a60-60a3-c0beb67fb038';
-// global.DecClient = new DecClient({
-//      apiKey: decApiKey,
-//      source: 'QuantumDecDemo',
-//      authToken: 'appauth ' + decApiKey
-//  });
+var decApiKey = '3390673b-c029-45a2-8242-9692e9e57a28';
+global.DecClient = new DecClient({
+     apiKey: decApiKey,
+     source: 'QuantumDecDemo',
+     authToken: 'appauth ' + '3390673b-c029-45a2-8242-9692e9e57a28'
+     //authToken: 'appauth ' + 'BA35A9CE-83B2-F6D9-4CB9-0DE907F05844'
+ });
 
 var resources = application.getResources();
 resources['utcDateConverter'] = utcDateConverter;
@@ -255,6 +257,7 @@ application.on(application.launchEvent, function (args) {
     }
 
     http.request({ url: ServiceEndPoint + HierarchyTaxaPath, method: "GET" }).then(function (response) {
+        //console.log(response.content);
 
         var items = response.content.toJSON().value;
 

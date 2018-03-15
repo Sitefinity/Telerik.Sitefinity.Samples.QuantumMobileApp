@@ -10,6 +10,7 @@ function createViewModel() {
 
     viewModel.getAllItems = function () {
         var url = viewModel.resolveServiceURL();
+        //alert('test1');
 
         http.request({ url: url, method: "GET" }).then(function (response) {
             //http://10.0.2.2:89 or http://10.0.3.2:89 is your localhost because of the VM and the emulator
@@ -27,8 +28,10 @@ function createViewModel() {
                 });
             }
 
-            convertCategoriesToStrings(items);
-
+            convertCategoriesToStrings(items); 
+            
+            // alert('test');
+            // console.log(items);
             var newsDataSource = new observableArrayModule.ObservableArray(items);
 
             viewModel.set("newsDataSource", newsDataSource);
