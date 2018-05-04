@@ -237,12 +237,11 @@ global.CurrentUser = {};
 /* The following is used to initialize the DEC Client.
  * Uncomment and fill the needed fields if you want to use it.
  */  
-var decApiKey = '3390673b-c029-45a2-8242-9692e9e57a28';
+var decApiKey = '';
 global.DecClient = new DecClient({
      apiKey: decApiKey,
      source: 'QuantumDecDemo',
-     authToken: 'appauth ' + '3390673b-c029-45a2-8242-9692e9e57a28'
-     //authToken: 'appauth ' + 'BA35A9CE-83B2-F6D9-4CB9-0DE907F05844'
+     authToken: 'appauth ' + decApiKey
  });
 
 var resources = application.getResources();
